@@ -25,12 +25,12 @@
     "bio": "Creative and results-driven Senior Graphic Designer with 9 years of professional experience in graphic design, multimedia, branding, visual communication, and digital content creation. Proven ability to transform concepts and business requirements into engaging, visually compelling designs that effectively communicate brand messages and enhance audience engagement. Seeking to contribute creative expertise, strategic thinking, and strong design capabilities to an innovative and forward-thinking organization, while delivering high-quality visual solutions that support brand growth and business success.",
     "location": "India · Available worldwide",
     "image": "assets/profile.jpg",
-    "resumeUrl": "#",
+    "resumeUrl": "",
     "email": "rambhardwaj3@gmail.com",
     "phone": "+91 7011558727",
     "linkedin": "https://www.linkedin.com/in/ram-bhardwaj-0a560028",
-    "instagram": "#",
-    "behance": "#"
+    "instagram": "",
+    "behance": ""
   },
   "stats": [
     {
@@ -63,37 +63,20 @@
       "approach": "A confident wordmark, modular botanical symbols and a cream, black and vermilion palette create strong recognition across packaging and campaigns."
     },
     {
-      "id": "solstice",
-      "order": 2,
-      "title": "SOLSTICE LAB",
-      "category": "Brand Identity · Digital Campaign",
-      "year": "2026",
-      "image": "assets/solstice.jpg",
-      "featured": true,
-      "description": "An optimistic mineral-suncare identity balancing clinical trust with the visual energy of summer.",
-      "approach": "Cobalt blue communicates protection while warm yellow introduces sunlight and optimism. A modular grid keeps education and product messaging clear."
-    },
-    {
       "id": "sora",
       "order": 3,
       "title": "SORA BAKEHOUSE",
       "category": "Brand Identity · Social Media",
       "year": "2026",
-      "image": "assets/sora.jpg",
+      "image": "/media_uploads/1787139209391-d48f74de.jpg",
       "featured": true,
       "description": "A warm neighbourhood bakery identity inspired by handcrafted pastry and quiet daily rituals.",
-      "approach": "A soft wordmark, cocoa brown and dusty rose palette, tactile paper and intimate photography create a calm, recognisable world."
-    },
-    {
-      "id": "poster-studies",
-      "order": 4,
-      "title": "POSTER STUDIES",
-      "category": "Typography · Print",
-      "year": "2026",
-      "image": "assets/posters.jpg",
-      "featured": false,
-      "description": "Experimental poster directions exploring music culture, aviation systems and street-fashion energy.",
-      "approach": "Oversized type, collage, halftone texture and strong image hierarchy create three distinct visual voices."
+      "approach": "A soft wordmark, cocoa brown and dusty rose palette, tactile paper and intimate photography create a calm, recognisable world.",
+      "images": [
+        "/media_uploads/1787139209391-d48f74de.jpg",
+        "/media_uploads/1787139222114-c8868ee5.jpg",
+        "/media_uploads/1787139229606-7188778d.jpg"
+      ]
     },
     {
       "id": "surreal",
@@ -108,25 +91,59 @@
     },
     {
       "id": "form-field",
-      "order": 6,
-      "title": "FORM & FIELD",
+      "title": "Cover Page",
       "category": "Editorial · Print",
       "year": "2026",
       "image": "assets/editorial.jpg",
+      "description": "",
+      "approach": "",
+      "order": 6,
       "featured": false,
-      "description": "A fictional cultural journal system spanning covers, editorial spreads, invitations and typographic collateral.",
-      "approach": "A disciplined Swiss-inspired grid is balanced with warm paper, oversized type and restrained red details."
+      "images": [
+        "assets/editorial.jpg"
+      ]
     },
     {
       "id": "nexa",
-      "order": 7,
-      "title": "NEXA GRID",
+      "title": "Facebook ADs",
       "category": "Digital Campaign",
       "year": "2026",
       "image": "assets/nexa.jpg",
-      "featured": false,
       "description": "A future-facing social campaign toolkit for AI, climate and connected technology.",
-      "approach": "Dark cinematic imagery, electric orange accents and modular headlines create immediate feed recognition."
+      "approach": "Dark cinematic imagery, electric orange accents and modular headlines create immediate feed recognition.",
+      "order": 7,
+      "featured": false,
+      "images": [
+        "assets/nexa.jpg"
+      ]
+    },
+    {
+      "id": "project-1787140553628",
+      "title": "Social Media Campaign",
+      "category": "",
+      "year": "2026",
+      "image": "/media_uploads/1787140581682-50312e05.jpg",
+      "description": "",
+      "approach": "",
+      "order": 6,
+      "featured": false,
+      "images": [
+        "/media_uploads/1787140581682-50312e05.jpg"
+      ]
+    },
+    {
+      "id": "project-1787140620467",
+      "title": "Website Landing Page",
+      "category": "",
+      "year": "2026",
+      "image": "/media_uploads/1787140637564-c2725e48.jpg",
+      "description": "",
+      "approach": "",
+      "order": 7,
+      "featured": false,
+      "images": [
+        "/media_uploads/1787140637564-c2725e48.jpg"
+      ]
     }
   ],
   "reels": [
@@ -142,7 +159,7 @@
     },
     {
       "id": "reel-1787115422725",
-      "title": "New Reel",
+      "title": "Brand Campaign Reel",
       "category": "Motion",
       "year": "2026",
       "order": 2,
@@ -152,7 +169,7 @@
     },
     {
       "id": "reel-1787115445526",
-      "title": "New Reel",
+      "title": "Packaging Design Showcase",
       "category": "Motion",
       "year": "2026",
       "order": 3,
@@ -162,7 +179,7 @@
     },
     {
       "id": "reel-1787115469846",
-      "title": "New Reel",
+      "title": "Social Media Campaign",
       "category": "Motion",
       "year": "2026",
       "order": 5,
@@ -172,7 +189,7 @@
     },
     {
       "id": "reel-1787115478861",
-      "title": "New Reel",
+      "title": "Motion Graphics Reel",
       "category": "Motion",
       "year": "2026",
       "order": 6,
@@ -182,7 +199,7 @@
     },
     {
       "id": "reel-1787115502981",
-      "title": "New Reel",
+      "title": "Typography Animation",
       "category": "Motion",
       "year": "2026",
       "order": 8,
@@ -191,34 +208,54 @@
       "description": ""
     },
     {
-      "id": "showreel-01",
-      "order": 1,
-      "title": "Selected Work Reel",
-      "category": "Motion & Campaign Preview",
+      "id": "reel-1787129614805",
+      "title": "Watch Cinematic Ad",
+      "category": "Motion",
       "year": "2026",
-      "video": "assets/demo-reel.mp4",
+      "order": 8,
+      "video": "/media_uploads/1787129619724-3ec9aa26.mp4",
       "poster": "assets/kanso.jpg",
-      "description": "A fast visual edit featuring brand identity, packaging, posters and campaign work."
+      "description": ""
+    },
+    {
+      "id": "reel-1787129623589",
+      "title": "Smartworld  Elle",
+      "category": "Motion",
+      "year": "2026",
+      "order": 6,
+      "video": "/media_uploads/1787129628611-aafd603e.mp4",
+      "poster": "assets/kanso.jpg",
+      "description": ""
     }
   ],
   "brochures": [
     {
-      "id": "brochure-1787125271029",
+      "id": "brochure-1787129640501",
       "title": "Vianaar Company Profile External",
       "category": "PDF Brochure",
       "year": "2026",
       "order": 1,
-      "pdf": "/media_uploads/1787125313611-3e4cb47b.pdf",
+      "pdf": "/media_uploads/1787129647166-53b60615.pdf",
       "cover": "",
       "description": ""
     },
     {
-      "id": "brochure-1787125325917",
+      "id": "brochure-1787129648677",
       "title": "Vianaar Sales Partner Event Brochure",
       "category": "PDF Brochure",
       "year": "2026",
       "order": 2,
-      "pdf": "/media_uploads/1787125373839-618bf30c.pdf",
+      "pdf": "/media_uploads/1787129652711-d90ea08c.pdf",
+      "cover": "",
+      "description": ""
+    },
+    {
+      "id": "brochure-1787129654446",
+      "title": "Facilities Newsletter Sept 2024",
+      "category": "PDF Brochure",
+      "year": "2026",
+      "order": 3,
+      "pdf": "/media_uploads/1787129660828-461b4a6c.pdf",
       "cover": "",
       "description": ""
     }
@@ -231,7 +268,8 @@
       "subtitle": "Digital Systems",
       "color": "#e91f2a",
       "mark": "cross",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "skyroute",
@@ -240,7 +278,8 @@
       "subtitle": "Travel Smart",
       "color": "#2366d1",
       "mark": "arrow",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "boldarc",
@@ -249,7 +288,8 @@
       "subtitle": "Creative Studio",
       "color": "#0d6075",
       "mark": "blocks",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "casafuoco",
@@ -258,7 +298,8 @@
       "subtitle": "Italian Grill",
       "color": "#f04b23",
       "mark": "flame",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "poppit",
@@ -267,7 +308,8 @@
       "subtitle": "Youth Culture",
       "color": "#8d2fc0",
       "mark": "flower",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "lumo",
@@ -276,7 +318,8 @@
       "subtitle": "Fresh Start",
       "color": "#22a6a1",
       "mark": "orbit",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "azura",
@@ -285,7 +328,8 @@
       "subtitle": "Botanicals",
       "color": "#4d43b8",
       "mark": "petal",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "atelier",
@@ -294,7 +338,8 @@
       "subtitle": "Craft & Form",
       "color": "#b38a52",
       "mark": "monogram",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "northline",
@@ -303,7 +348,8 @@
       "subtitle": "Build Co.",
       "color": "#151411",
       "mark": "house",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "rooster",
@@ -312,7 +358,8 @@
       "subtitle": "Kitchen",
       "color": "#d69c14",
       "mark": "letter",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "verity",
@@ -321,7 +368,8 @@
       "subtitle": "Legal Search",
       "color": "#e54970",
       "mark": "search",
-      "image": ""
+      "image": "",
+      "watermark": false
     },
     {
       "id": "museline",
@@ -330,7 +378,18 @@
       "subtitle": "Creative Notes",
       "color": "#222222",
       "mark": "wave",
-      "image": ""
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "logo-1787125395662",
+      "name": "VIANAAR",
+      "subtitle": "Real Estate",
+      "color": "#e91f2a",
+      "mark": "letter",
+      "order": 13,
+      "watermark": false,
+      "image": "/media_uploads/1787125407008-c00907d1.png"
     }
   ],
   "services": [

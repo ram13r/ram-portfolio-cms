@@ -75,9 +75,7 @@ function writeData(obj, backup = true) {
     const all = fs.readdirSync(BACKUPS).sort();
     while (all.length > 30) fs.rmSync(path.join(BACKUPS, all.shift()), { force: true });
   }
-  const tmp = DATA + '.tmp';
-  fs.writeFileSync(tmp, JSON.stringify(obj, null, 2));
-  fs.renameSync(tmp, DATA);
+  fs.writeFileSync(DATA, JSON.stringify(obj, null, 2));
   autoGitPush();
 }
 
@@ -195,10 +193,7 @@ function serveFile(req, res, file) {
 // Ensure media is reconciled on startup
 reconcileMedia();
 
-// Active session tokens & HMAC stateless auth
-const activeTokens = new Set();
-const ADMIN_EMAIL = 'rambhardwaj3@gmail.com';
-const ADMIN_PASS = 'Ram@Portfolio2026';
+// HMAC stateless auth
 const ADMIN_SECRET = 'ram-portfolio-secret-key-2026';
 
 function generateAuthToken(email) {
