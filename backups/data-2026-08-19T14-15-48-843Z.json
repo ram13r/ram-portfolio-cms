@@ -393,8 +393,8 @@
       "color": "#e91f2a",
       "mark": "letter",
       "order": 14,
-      "watermark": true,
-      "image": "/media_uploads/1787142548902-6f8e4fe3.png"
+      "image": "/media_uploads/1787142548902-6f8e4fe3.png",
+      "watermark": false
     }
   ],
   "services": [
