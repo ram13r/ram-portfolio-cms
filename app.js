@@ -268,62 +268,76 @@ async function render() {
 }
 
 /**
- * BROCHURES SETUP
+ * BROCHURES SETUP (Lazy loaded via IntersectionObserver for instant page load)
  */
 async function setupBrochures(items) {
-  for (const item of items) {
-    try {
-      const pdf = await pdfjsLib.getDocument(item.pdf).promise;
-      const state = { pdf, page: 1, rendering: false };
-      
-      const canvas = $(`#canvas-${item.id}`);
-      const status = $(`#page-${item.id}`);
-      
-      if (!canvas || !status) continue;
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(item => loadSingleBrochure(item));
+    return;
+  }
+  
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const itemId = card.dataset.brochure;
+        const item = items.find(x => x.id === itemId);
+        if (item) {
+          obs.unobserve(card);
+          loadSingleBrochure(item);
+        }
+      }
+    });
+  }, { rootMargin: '300px' });
 
-      async function draw() {
-        if (state.rendering) return;
-        state.rendering = true;
-        
-        const page = await pdf.getPage(state.page);
-        const viewport = page.getViewport({ scale: 1.15 });
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        
-        await page.render({ canvasContext: ctx, viewport }).promise;
-        status.textContent = `Page ${state.page} / ${pdf.numPages}`;
-        state.rendering = false;
-      }
+  items.forEach(item => {
+    const card = document.querySelector(`[data-brochure="${item.id}"]`);
+    if (card) observer.observe(card);
+  });
+}
+
+async function loadSingleBrochure(item) {
+  try {
+    const canvas = $(`#canvas-${item.id}`);
+    const status = $(`#page-${item.id}`);
+    if (!canvas || !status) return;
+
+    status.textContent = 'Loading brochure…';
+    const pdf = await pdfjsLib.getDocument(item.pdf).promise;
+    const state = { pdf, page: 1, rendering: false };
+    
+    async function draw() {
+      if (state.rendering) return;
+      state.rendering = true;
+      const page = await pdf.getPage(state.page);
+      const viewport = page.getViewport({ scale: 1.15 });
+      const ctx = canvas.getContext('2d');
       
-      const prevBtn = document.querySelector(`[data-prev="${item.id}"]`);
-      if (prevBtn) {
-        prevBtn.onclick = () => {
-          if (state.page > 1) {
-            state.page--;
-            draw();
-          }
-        };
-      }
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
       
-      const nextBtn = document.querySelector(`[data-next="${item.id}"]`);
-      if (nextBtn) {
-        nextBtn.onclick = () => {
-          if (state.page < pdf.numPages) {
-            state.page++;
-            draw();
-          }
-        };
-      }
-      
-      draw();
-    } catch (err) {
-      const stage = document.querySelector(`[data-brochure="${item.id}"] .pdf-stage`);
-      if (stage) {
-        stage.innerHTML = `<p>Preview unavailable. <a href="${item.pdf}" target="_blank">Open PDF</a></p>`;
-      }
+      await page.render({ canvasContext: ctx, viewport }).promise;
+      status.textContent = `Page ${state.page} / ${pdf.numPages}`;
+      state.rendering = false;
     }
+    
+    const prevBtn = document.querySelector(`[data-prev="${item.id}"]`);
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        if (state.page > 1) { state.page--; draw(); }
+      };
+    }
+    
+    const nextBtn = document.querySelector(`[data-next="${item.id}"]`);
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        if (state.page < pdf.numPages) { state.page++; draw(); }
+      };
+    }
+    
+    draw();
+  } catch (err) {
+    const status = $(`#page-${item.id}`);
   }
 }
 
