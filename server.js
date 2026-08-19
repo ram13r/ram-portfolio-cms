@@ -262,7 +262,7 @@ const server = http.createServer((req, res) => {
     let chunks = [], size = 0;
     req.on('data', c => {
       size += c.length;
-      if (size > 15 * 1024 * 1024) req.destroy();
+      if (size > 200 * 1024 * 1024) req.destroy();
       else chunks.push(c);
     });
     req.on('end', () => {
