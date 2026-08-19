@@ -82,17 +82,10 @@ async function render() {
   const projectGrid = $('#projectGrid');
   if (projectGrid) {
     const projects = [...data.projects].sort((a, b) => a.order - b.order);
-    projectGrid.innerHTML = projects.map(proj => `
+    projectGrid.innerHTML = projects.map(proj => {
+      const imgs = getProjectImages(proj);
+      return `
       <article class="project" data-id="${proj.id}">
-        <figure>
-          <a class="project-image" href="${proj.image}" target="_blank" rel="noopener" title="Open cover image in new tab">
-            <img src="${proj.image}" alt="${proj.title} project" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'300\\' style=\\'background:%23eee\\'/%3E'; this.alt='Image not available'">
-          </a>
-        </figure>
-        <div class="image-hint">
-          <span>Click image for full view ↗</span>
-          <button class="case-link" data-id="${proj.id}">View case study</button>
-        </div>
         <div class="project-meta">
           <div>
             <p>${proj.category}</p>
@@ -100,15 +93,18 @@ async function render() {
           </div>
           <span>${proj.year}</span>
         </div>
+        ${proj.description ? `<p class="project-desc">${proj.description}</p>` : ''}
+        <div class="project-images-stack">
+          ${imgs.map((src, i) => `
+            <a href="${src}" target="_blank" rel="noopener" class="project-img-link" title="Click to open full size image in new tab ↗">
+              <img src="${src}" alt="${proj.title} image ${i+1}" loading="lazy">
+              <span class="img-open-badge">Open full image ↗</span>
+            </a>
+          `).join('')}
+        </div>
       </article>
-    `).join('');
-
-    document.querySelectorAll('.case-link').forEach(el => {
-      el.addEventListener('click', e => {
-        e.stopPropagation();
-        openProject(el.dataset.id);
-      });
-    });
+    `;
+    }).join('');
   }
 
   // --- Reels / Media ---
