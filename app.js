@@ -3,11 +3,16 @@
  */
 const KEY = 'ramPortfolioCMS_v3';
 const clone = v => JSON.parse(JSON.stringify(v));
+function cleanBase64Data(d){if(!d)return;if(d.projects){d.projects.forEach(p=>{if(p.id==='form-field'&&(!p.image||p.image.startsWith('data:'))){p.image='assets/editorial.jpg';p.images=['assets/editorial.jpg']}if(p.id==='nexa'&&(!p.image||p.image.startsWith('data:'))){p.image='assets/nexa.jpg';p.images=['assets/nexa.jpg']}if(p.image&&p.image.startsWith('data:'))p.image='assets/editorial.jpg';if(p.images)p.images=p.images.map(img=>(img&&img.startsWith('data:'))?'assets/editorial.jpg':img)})}if(d.reels){d.reels.forEach(r=>{if(r.poster&&r.poster.startsWith('data:'))r.poster='assets/kanso.jpg'})}}
 let data = (() => {
   try {
-    return JSON.parse(localStorage.getItem(KEY)) || clone(window.DEFAULT_PORTFOLIO);
+    const localVal = JSON.parse(localStorage.getItem(KEY)) || clone(window.DEFAULT_PORTFOLIO);
+    cleanBase64Data(localVal);
+    return localVal;
   } catch {
-    return clone(window.DEFAULT_PORTFOLIO);
+    const def = clone(window.DEFAULT_PORTFOLIO);
+    cleanBase64Data(def);
+    return def;
   }
 })();
 
@@ -472,6 +477,7 @@ async function boot() {
         profile: { ...DEFAULT_PORTFOLIO.profile, ...(saved.profile || {}) },
         stats: saved.stats || DEFAULT_PORTFOLIO.stats
       };
+      cleanBase64Data(data);
       try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
     }
   } catch (e) {

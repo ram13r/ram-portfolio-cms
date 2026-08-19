@@ -1,7 +1,8 @@
 const KEY='ramPortfolioCMS_v3',SESSION='ramPortfolioAdminPassword_v2';
 /* Credentials are verified server-side via /api/login */
 const clone=v=>JSON.parse(JSON.stringify(v));
-function loadData(){const base=clone(DEFAULT_PORTFOLIO);let saved=null;for(const key of [KEY,'ramPortfolioCMS_v2','ramPortfolioCMS_v1']){try{saved=JSON.parse(localStorage.getItem(key));if(saved)break}catch{}}if(!saved)return base;return{...base,...saved,settings:{...base.settings,...(saved.settings||{})},profile:{...base.profile,...(saved.profile||{})},stats:saved.stats||base.stats,projects:saved.projects||base.projects,reels:saved.reels||base.reels,brochures:saved.brochures||base.brochures,logos:saved.logos||base.logos,services:saved.services||base.services}}
+function cleanBase64Data(d){if(!d)return;if(d.projects){d.projects.forEach(p=>{if(p.id==='form-field'&&(!p.image||p.image.startsWith('data:'))){p.image='assets/editorial.jpg';p.images=['assets/editorial.jpg']}if(p.id==='nexa'&&(!p.image||p.image.startsWith('data:'))){p.image='assets/nexa.jpg';p.images=['assets/nexa.jpg']}if(p.image&&p.image.startsWith('data:'))p.image='assets/editorial.jpg';if(p.images)p.images=p.images.map(img=>(img&&img.startsWith('data:'))?'assets/editorial.jpg':img)})}if(d.reels){d.reels.forEach(r=>{if(r.poster&&r.poster.startsWith('data:'))r.poster='assets/kanso.jpg'})}}
+function loadData(){const base=clone(DEFAULT_PORTFOLIO);let saved=null;for(const key of [KEY,'ramPortfolioCMS_v2','ramPortfolioCMS_v1']){try{saved=JSON.parse(localStorage.getItem(key));if(saved)break}catch{}}let res=base;if(saved){res={...base,...saved,settings:{...base.settings,...(saved.settings||{})},profile:{...base.profile,...(saved.profile||{})},stats:saved.stats||base.stats,projects:saved.projects||base.projects,reels:saved.reels||base.reels,brochures:saved.brochures||base.brochures,logos:saved.logos||base.logos,services:saved.services||base.services}}cleanBase64Data(res);return res}
 let data=loadData();
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 async function save(){try{$('#saveState').textContent='Saving…';const r=await fetch('/api/data',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+(sessionStorage.getItem(SESSION)||'')},body:JSON.stringify(data)});if(r.status===401){sessionStorage.removeItem(SESSION);alert('Session expired or server restarted. Please log in again.');location.reload();return}if(!r.ok){const errData=await r.json().catch(()=>({}));throw new Error(errData.error||`HTTP ${r.status}`)}localStorage.setItem(KEY,JSON.stringify(data));try{new BroadcastChannel('ram-portfolio-updates').postMessage('refresh')}catch{}$('#saveState').textContent='Saved permanently · '+new Date().toLocaleTimeString();renderAll()}catch(err){alert('Save failed: '+err.message)}}
@@ -17,6 +18,7 @@ async function enter(){
     const r=await fetch('/api/data',{cache:'no-store'});
     if(r.ok){
       const serverData=await r.json();
+      cleanBase64Data(serverData);
       serverData.settings={...DEFAULT_PORTFOLIO.settings,...(serverData.settings||{})};
       serverData.profile={...DEFAULT_PORTFOLIO.profile,...(serverData.profile||{})};
       serverData.stats=serverData.stats||DEFAULT_PORTFOLIO.stats;
