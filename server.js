@@ -182,12 +182,22 @@ function serveFile(req, res, file) {
 // Ensure media is reconciled on startup
 reconcileMedia();
 
+// Active session tokens & HMAC stateless auth
+const activeTokens = new Set();
+const ADMIN_EMAIL = 'rambhardwaj3@gmail.com';
+const ADMIN_PASS = 'Ram@Portfolio2026';
+const ADMIN_SECRET = 'ram-portfolio-secret-key-2026';
+
+function generateAuthToken(email) {
+  return crypto.createHmac('sha256', ADMIN_SECRET).update(email.toLowerCase().trim() + ':' + ADMIN_PASS).digest('hex');
+}
+
 // Helper to authenticate request
 function isAuthenticated(req) {
   const authHeader = req.headers.authorization || '';
   if (!authHeader.startsWith('Bearer ')) return false;
   const token = authHeader.substring(7);
-  return activeTokens.has(token);
+  return token === generateAuthToken(ADMIN_EMAIL) || activeTokens.has(token);
 }
 
 const server = http.createServer((req, res) => {
@@ -200,8 +210,8 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       try {
         const { email, password } = JSON.parse(body);
-        if (email === ADMIN_EMAIL && password === ADMIN_PASS) {
-          const token = crypto.randomBytes(32).toString('hex');
+        if (email.toLowerCase().trim() === ADMIN_EMAIL && password === ADMIN_PASS) {
+          const token = generateAuthToken(ADMIN_EMAIL);
           activeTokens.add(token);
           return send(res, 200, JSON.stringify({ ok: true, token }), 'application/json');
         }

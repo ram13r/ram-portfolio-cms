@@ -431,6 +431,7 @@ async function boot() {
         profile: { ...DEFAULT_PORTFOLIO.profile, ...(saved.profile || {}) },
         stats: saved.stats || DEFAULT_PORTFOLIO.stats
       };
+      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
     }
   } catch (e) {
     // Fallback to local storage data
