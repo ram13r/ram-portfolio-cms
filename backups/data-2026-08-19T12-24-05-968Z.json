@@ -97,14 +97,14 @@
       "title": "Facebook ADs",
       "category": "Digital Campaign",
       "year": "2026",
-      "image": "/media_uploads/1787141002738-70021277.jpg",
+      "image": "assets/nexa.jpg",
       "description": "A future-facing social campaign toolkit for AI, climate and connected technology.",
       "approach": "Dark cinematic imagery, electric orange accents and modular headlines create immediate feed recognition.",
       "order": 7,
       "featured": false,
       "images": [
-        "/media_uploads/1787141002738-70021277.jpg",
-        "/media_uploads/1787142244483-c4a9384d.jpg"
+        "assets/nexa.jpg",
+        "/media_uploads/1787141002738-70021277.jpg"
       ]
     },
     {
