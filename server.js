@@ -56,6 +56,18 @@ function readData() {
   }
 }
 
+let gitPushDebounceTimer = null;
+function autoGitPush() {
+  clearTimeout(gitPushDebounceTimer);
+  gitPushDebounceTimer = setTimeout(() => {
+    const { exec } = require('child_process');
+    exec('git add -A && git commit -m "Auto-sync CMS data & media from Admin" && git push origin master', { cwd: ROOT }, (err, stdout, stderr) => {
+      if (err) console.warn('[Auto-Git-Push] Note:', err.message);
+      else console.log('[Auto-Git-Push] Successfully pushed to GitHub!');
+    });
+  }, 2000);
+}
+
 function writeData(obj, backup = true) {
   if (backup && fs.existsSync(DATA)) {
     const stamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -66,6 +78,7 @@ function writeData(obj, backup = true) {
   const tmp = DATA + '.tmp';
   fs.writeFileSync(tmp, JSON.stringify(obj, null, 2));
   fs.renameSync(tmp, DATA);
+  autoGitPush();
 }
 
 function upsertUploaded(kind, id, title, url, original) {
