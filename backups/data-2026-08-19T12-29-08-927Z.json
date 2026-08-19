@@ -399,13 +399,17 @@
     },
     {
       "id": "logo-1787142540371",
-      "name": "NEW LOGO",
-      "subtitle": "Category",
+      "title": "NEW LOGO",
+      "category": "Logo",
+      "year": "2026",
+      "order": 14,
+      "description": "",
+      "subtitle": "Brand mark",
       "color": "#e91f2a",
       "mark": "letter",
-      "order": 14,
+      "watermark": false,
       "image": "/media_uploads/1787142548902-6f8e4fe3.png",
-      "watermark": false
+      "name": "NEW LOGO"
     }
   ],
   "services": [
