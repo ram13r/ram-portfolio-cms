@@ -387,6 +387,35 @@ if (projectModal) {
   });
 }
 
+// Lightbox Fullscreen Image Viewer
+function openLightbox(src) {
+  if (!src) return;
+  const lbImg = $('#lightboxImage');
+  const lbModal = $('#lightboxModal');
+  if (lbImg && lbModal) {
+    lbImg.src = src;
+    lbModal.showModal();
+  }
+}
+
+const lbClose = $('.lightbox-close');
+const lbModal = $('#lightboxModal');
+if (lbClose && lbModal) {
+  lbClose.addEventListener('click', () => lbModal.close());
+  lbModal.addEventListener('click', e => {
+    if (e.target === lbModal || e.target.tagName === 'IMG') {
+      lbModal.close();
+    }
+  });
+}
+
+// Click any image in modal gallery or logo mark to open Fullscreen
+document.addEventListener('click', e => {
+  if (e.target.tagName === 'IMG' && e.target.closest('#modalGallery, .logo-mark')) {
+    if (e.target.src) openLightbox(e.target.src);
+  }
+});
+
 /**
  * UI EVENTS & INIT
  */
