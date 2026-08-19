@@ -359,7 +359,10 @@ function openProject(id) {
   if (modalGallery) {
     const imgs = getProjectImages(p);
     modalGallery.innerHTML = imgs.map((src, i) => `
-      <img src="${src}" alt="${p.title} image ${i+1}" loading="lazy">
+      <a href="${src}" target="_blank" rel="noopener" class="modal-img-link" title="Click to open full image in new tab ↗">
+        <img src="${src}" alt="${p.title} image ${i+1}" loading="lazy">
+        <span class="img-open-hint">Open full image in new tab ↗</span>
+      </a>
     `).join('');
   }
   
@@ -386,35 +389,6 @@ if (projectModal) {
     if (e.target === projectModal) projectModal.close();
   });
 }
-
-// Lightbox Fullscreen Image Viewer
-function openLightbox(src) {
-  if (!src) return;
-  const lbImg = $('#lightboxImage');
-  const lbModal = $('#lightboxModal');
-  if (lbImg && lbModal) {
-    lbImg.src = src;
-    lbModal.showModal();
-  }
-}
-
-const lbClose = $('.lightbox-close');
-const lbModal = $('#lightboxModal');
-if (lbClose && lbModal) {
-  lbClose.addEventListener('click', () => lbModal.close());
-  lbModal.addEventListener('click', e => {
-    if (e.target === lbModal || e.target.tagName === 'IMG') {
-      lbModal.close();
-    }
-  });
-}
-
-// Click any image in modal gallery or logo mark to open Fullscreen
-document.addEventListener('click', e => {
-  if (e.target.tagName === 'IMG' && e.target.closest('#modalGallery, .logo-mark')) {
-    if (e.target.src) openLightbox(e.target.src);
-  }
-});
 
 /**
  * UI EVENTS & INIT
