@@ -38,29 +38,32 @@
       "label": "Years of experience"
     },
     {
-      "value": "100+",
+      "value": "50+",
       "label": "Videos produced"
     },
     {
-      "value": "50+",
+      "value": "20+",
       "label": "Print campaigns"
     },
     {
-      "value": "95%",
+      "value": "100%",
       "label": "Client satisfaction"
     }
   ],
   "projects": [
     {
       "id": "kanso",
-      "order": 1,
+      "order": 4,
       "title": "KANSO",
       "category": "Brand Identity · Packaging",
       "year": "2026",
       "image": "assets/kanso.jpg",
       "featured": true,
       "description": "A calm, tactile identity for a contemporary botanical sparkling tea, combining warm materials with a precise visual system.",
-      "approach": "A confident wordmark, modular botanical symbols and a cream, black and vermilion palette create strong recognition across packaging and campaigns."
+      "approach": "A confident wordmark, modular botanical symbols and a cream, black and vermilion palette create strong recognition across packaging and campaigns.",
+      "images": [
+        "assets/kanso.jpg"
+      ]
     },
     {
       "id": "sora",
@@ -79,28 +82,18 @@
       ]
     },
     {
-      "id": "surreal",
-      "order": 5,
-      "title": "SURREAL COMPOSITES",
-      "category": "Photo Manipulation",
-      "year": "2026",
-      "image": "assets/manipulation.jpg",
-      "featured": false,
-      "description": "A collection of cinematic advertising composites built around impossible spaces and controlled atmosphere.",
-      "approach": "Lighting, scale, masking and color grading connect unrelated source elements into believable visual worlds."
-    },
-    {
       "id": "form-field",
       "title": "Cover Page",
       "category": "Editorial · Print",
       "year": "2026",
-      "image": "assets/editorial.jpg",
+      "image": "/media_uploads/1787142282247-1c97d73f.jpg",
       "description": "",
       "approach": "",
       "order": 6,
       "featured": false,
       "images": [
-        "assets/editorial.jpg"
+        "/media_uploads/1787142282247-1c97d73f.jpg",
+        "/media_uploads/1787148895653-c5e8ccd9.jpg"
       ]
     },
     {
@@ -108,13 +101,13 @@
       "title": "Facebook ADs",
       "category": "Digital Campaign",
       "year": "2026",
-      "image": "assets/nexa.jpg",
+      "image": "/media_uploads/1787142439023-c4a7c7df.jpg",
       "description": "A future-facing social campaign toolkit for AI, climate and connected technology.",
       "approach": "Dark cinematic imagery, electric orange accents and modular headlines create immediate feed recognition.",
       "order": 7,
       "featured": false,
       "images": [
-        "assets/nexa.jpg"
+        "/media_uploads/1787142439023-c4a7c7df.jpg"
       ]
     },
     {
@@ -132,17 +125,19 @@
       ]
     },
     {
-      "id": "project-1787140620467",
-      "title": "Website Landing Page",
+      "id": "project-1787142302971",
+      "title": "One Pager For Clients",
       "category": "",
       "year": "2026",
-      "image": "/media_uploads/1787140637564-c2725e48.jpg",
+      "image": "/media_uploads/1787142321689-e856c2db.jpg",
       "description": "",
       "approach": "",
       "order": 7,
       "featured": false,
       "images": [
-        "/media_uploads/1787140637564-c2725e48.jpg"
+        "/media_uploads/1787142321689-e856c2db.jpg",
+        "/media_uploads/1787142321748-54f699c0.jpg",
+        "/media_uploads/1787142321777-8e5f16b4.jpg"
       ]
     }
   ],
@@ -256,6 +251,16 @@
       "year": "2026",
       "order": 3,
       "pdf": "/media_uploads/1787129660828-461b4a6c.pdf",
+      "cover": "",
+      "description": ""
+    },
+    {
+      "id": "brochure-1787149094247",
+      "title": "RP Realty Solutions Brochure",
+      "category": "PDF Brochure",
+      "year": "2026",
+      "order": 4,
+      "pdf": "/media_uploads/1787149112185-0d3fb2a2.pdf",
       "cover": "",
       "description": ""
     }
@@ -390,6 +395,16 @@
       "order": 13,
       "watermark": false,
       "image": "/media_uploads/1787125407008-c00907d1.png"
+    },
+    {
+      "id": "logo-1787142540371",
+      "name": "Ramshika",
+      "subtitle": "Saree Brand",
+      "color": "#e91f2a",
+      "mark": "letter",
+      "order": 14,
+      "watermark": true,
+      "image": "/media_uploads/1787142548902-6f8e4fe3.png"
     }
   ],
   "services": [
