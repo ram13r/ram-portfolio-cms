@@ -80,6 +80,25 @@ window.removeProjectImage = function(idx) {
   renderProjectGalleryAdmin();
 };
 
+function openProject(p){
+  if(!p)p={id:'project-'+Date.now(),title:'',category:'',year:'2026',image:'',images:[],description:'',approach:'',featured:false,order:data.projects.length+1};
+  const f=$('#projectForm');
+  f.hidden=false;
+  f.elements.id.value=p.id||'';
+  f.elements.title.value=p.title||'';
+  f.elements.category.value=p.category||'';
+  f.elements.year.value=p.year||'';
+  f.elements.image.value=p.image||'';
+  f.elements.description.value=p.description||'';
+  f.elements.approach.value=p.approach||'';
+  f.elements.featured.checked=!!p.featured;
+  f.elements.order.value=p.order||1;
+  currentProjectImages=[];
+  if(p.images&&p.images.length>0){currentProjectImages=[...p.images]}
+  else if(p.image){currentProjectImages=[p.image]}
+  renderProjectGalleryAdmin();
+  f.scrollIntoView({behavior:'smooth'});
+}
 function renderProjects(){const list=[...data.projects].sort((a,b)=>a.order-b.order);$('#projectAdminList').innerHTML=list.map(p=>`<div class="project-admin"><img src="${p.image}"><div><h3>${p.title}</h3><p>${p.category} · ${p.year} (${(p.images&&p.images.length)||(p.image?1:0)} images)</p></div><div class="row-actions"><button data-act="up" data-id="${p.id}">↑</button><button data-act="down" data-id="${p.id}">↓</button><button data-act="edit" data-id="${p.id}">Edit</button><button data-act="remove" data-id="${p.id}">Remove</button></div></div>`).join('');$$('[data-act]').forEach(b=>b.onclick=()=>projectAction(b.dataset.act,b.dataset.id))}
 function projectAction(act,id){const i=data.projects.findIndex(p=>p.id===id);if(i<0)return;if(act==='remove'){if(confirm('Remove this project?')){data.projects.splice(i,1);save()}return}if(act==='edit'){openProject(data.projects[i]);return}const sorted=[...data.projects].sort((a,b)=>a.order-b.order),si=sorted.findIndex(p=>p.id===id),j=act==='up'?si-1:si+1;if(j<0||j>=sorted.length)return;const t=sorted[si].order;sorted[si].order=sorted[j].order;sorted[j].order=t;save()}
 $('#addProject').onclick=()=>openProject();$('#cancelProject').onclick=()=>$('#projectForm').hidden=true;$('#projectForm').onsubmit=e=>{e.preventDefault();const o=Object.fromEntries(new FormData(e.target));o.order=Number(o.order)||1;o.featured=e.target.featured.checked;o.images=[...currentProjectImages];o.image=currentProjectImages.length>0?currentProjectImages[0]:(o.image||'');const i=data.projects.findIndex(p=>p.id===o.id);if(i>=0)data.projects[i]={...data.projects[i],...o};else data.projects.push(o);e.target.hidden=true;save()};$('#projectImageUpload').onchange=async e=>{const files=e.target.files;if(!files||files.length===0)return;const projectId=$('#projectForm').elements.id.value||('project-'+Date.now());const projectTitle=$('#projectForm').elements.title.value||'Project';for(let idx=0;idx<files.length;idx++){const file=files[idx];$('#saveState').textContent=`Uploading image ${idx+1}/${files.length}…`;try{const o=await uploadWithProgress(file,p=>{$('#saveState').textContent=`Uploading image ${idx+1}/${files.length} (${p}%)…`},{kind:'project',id:projectId,title:projectTitle});currentProjectImages.push(o.url)}catch(err){console.warn('Server upload fallback',err);const src=await compress(file);currentProjectImages.push(src)}}renderProjectGalleryAdmin();$('#saveState').textContent=`${files.length} image(s) added — click 'Save project' to publish`;e.target.value=''};
