@@ -1,0 +1,442 @@
+{
+  "settings": {
+    "siteTitle": "RAM PRAKASH — Graphic Designer",
+    "accent": "#e91f2a",
+    "background": "#f3eee5",
+    "workEyebrow": "CURATED PORTFOLIO",
+    "workTitle": "SELECTED WORK.",
+    "mediaEyebrow": "VIDEO & DOCUMENTS",
+    "mediaTitle": "VIDEOS & BROCHURES.",
+    "logoEyebrow": "IDENTITY EXPLORATIONS",
+    "logoTitle": "SELECTED LOGO MARKS.",
+    "servicesEyebrow": "CAPABILITIES",
+    "servicesTitle": "WHAT I DO.",
+    "contactEyebrow": "START A PROJECT",
+    "contactTitle": "HAVE A PROJECT IN MIND?",
+    "contactSubtitle": "Let’s turn your idea into something people remember.",
+    "footerText": "Available for freelance and remote collaborations.",
+    "published": true
+  },
+  "profile": {
+    "name": "RAM PRAKASH",
+    "role": "Graphic Designer & Visual Designer",
+    "eyebrow": "AVAILABLE FOR SELECTED FREELANCE PROJECTS",
+    "tagline": "I create bold, purposeful visual experiences that help brands communicate clearly and stand out.",
+    "bio": "Creative and results-driven Senior Graphic Designer with 9 years of professional experience in graphic design, multimedia, branding, visual communication, and digital content creation. Proven ability to transform concepts and business requirements into engaging, visually compelling designs that effectively communicate brand messages and enhance audience engagement. Seeking to contribute creative expertise, strategic thinking, and strong design capabilities to an innovative and forward-thinking organization, while delivering high-quality visual solutions that support brand growth and business success.",
+    "location": "India · Available worldwide",
+    "image": "assets/profile.jpg",
+    "resumeUrl": "",
+    "email": "rambhardwaj3@gmail.com",
+    "phone": "+91 7011558727",
+    "linkedin": "https://www.linkedin.com/in/ram-bhardwaj-0a560028",
+    "instagram": "",
+    "behance": ""
+  },
+  "stats": [
+    {
+      "value": "9+",
+      "label": "Years of experience"
+    },
+    {
+      "value": "50+",
+      "label": "Videos produced"
+    },
+    {
+      "value": "20+",
+      "label": "Print campaigns"
+    },
+    {
+      "value": "100%",
+      "label": "Client satisfaction"
+    }
+  ],
+  "projects": [
+    {
+      "id": "kanso",
+      "order": 4,
+      "title": "KANSO",
+      "category": "Brand Identity · Packaging",
+      "year": "2026",
+      "image": "assets/kanso.jpg",
+      "featured": true,
+      "description": "A calm, tactile identity for a contemporary botanical sparkling tea, combining warm materials with a precise visual system.",
+      "approach": "A confident wordmark, modular botanical symbols and a cream, black and vermilion palette create strong recognition across packaging and campaigns.",
+      "images": [
+        "assets/kanso.jpg"
+      ]
+    },
+    {
+      "id": "sora",
+      "order": 3,
+      "title": "SORA BAKEHOUSE",
+      "category": "Brand Identity · Social Media",
+      "year": "2026",
+      "image": "/media_uploads/1787139209391-d48f74de.jpg",
+      "featured": true,
+      "description": "A warm neighbourhood bakery identity inspired by handcrafted pastry and quiet daily rituals.",
+      "approach": "A soft wordmark, cocoa brown and dusty rose palette, tactile paper and intimate photography create a calm, recognisable world.",
+      "images": [
+        "/media_uploads/1787139209391-d48f74de.jpg",
+        "/media_uploads/1787139222114-c8868ee5.jpg",
+        "/media_uploads/1787139229606-7188778d.jpg"
+      ]
+    },
+    {
+      "id": "form-field",
+      "title": "Cover Page",
+      "category": "Editorial · Print",
+      "year": "2026",
+      "image": "/media_uploads/1787142282247-1c97d73f.jpg",
+      "description": "",
+      "approach": "",
+      "order": 6,
+      "featured": false,
+      "images": [
+        "/media_uploads/1787142282247-1c97d73f.jpg",
+        "/media_uploads/1787148895653-c5e8ccd9.jpg"
+      ]
+    },
+    {
+      "id": "nexa",
+      "title": "Facebook ADs",
+      "category": "Digital Campaign",
+      "year": "2026",
+      "image": "/media_uploads/1787142439023-c4a7c7df.jpg",
+      "description": "A future-facing social campaign toolkit for AI, climate and connected technology.",
+      "approach": "Dark cinematic imagery, electric orange accents and modular headlines create immediate feed recognition.",
+      "order": 7,
+      "featured": false,
+      "images": [
+        "/media_uploads/1787142439023-c4a7c7df.jpg"
+      ]
+    },
+    {
+      "id": "project-1787140553628",
+      "title": "Social Media Campaign",
+      "category": "",
+      "year": "2026",
+      "image": "/media_uploads/1787140581682-50312e05.jpg",
+      "description": "",
+      "approach": "",
+      "order": 6,
+      "featured": false,
+      "images": [
+        "/media_uploads/1787140581682-50312e05.jpg"
+      ]
+    },
+    {
+      "id": "project-1787142302971",
+      "title": "One Pager For Clients",
+      "category": "",
+      "year": "2026",
+      "image": "/media_uploads/1787142321689-e856c2db.jpg",
+      "description": "",
+      "approach": "",
+      "order": 7,
+      "featured": false,
+      "images": [
+        "/media_uploads/1787142321689-e856c2db.jpg",
+        "/media_uploads/1787142321748-54f699c0.jpg",
+        "/media_uploads/1787142321777-8e5f16b4.jpg"
+      ]
+    }
+  ],
+  "reels": [
+    {
+      "id": "reel-1787115383245",
+      "title": "Vianaar Reel",
+      "category": "Motion",
+      "year": "2026",
+      "order": 1,
+      "video": "/media_uploads/1787115391033-909a8ccd.mp4",
+      "poster": "/media_uploads/1787115391033-909a8ccd-poster.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787115422725",
+      "title": "Brand Campaign Reel",
+      "category": "Motion",
+      "year": "2026",
+      "order": 2,
+      "video": "/media_uploads/1787115440520-accc758e.mp4",
+      "poster": "/media_uploads/1787115440520-accc758e-poster.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787115445526",
+      "title": "Packaging Design Showcase",
+      "category": "Motion",
+      "year": "2026",
+      "order": 3,
+      "video": "/media_uploads/1787115452233-efb5919e.mp4",
+      "poster": "/media_uploads/1787115452233-efb5919e-poster.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787115469846",
+      "title": "Social Media Campaign",
+      "category": "Motion",
+      "year": "2026",
+      "order": 5,
+      "video": "/media_uploads/1787115470566-43e5121a.mp4",
+      "poster": "/media_uploads/1787115470566-43e5121a-poster.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787115478861",
+      "title": "Motion Graphics Reel",
+      "category": "Motion",
+      "year": "2026",
+      "order": 6,
+      "video": "/media_uploads/1787115483431-9083ba54.mp4",
+      "poster": "/media_uploads/1787115483431-9083ba54-poster.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787115502981",
+      "title": "Typography Animation",
+      "category": "Motion",
+      "year": "2026",
+      "order": 8,
+      "video": "/media_uploads/1787115508351-d789215f.mp4",
+      "poster": "/media_uploads/1787115508351-d789215f-poster.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787129614805",
+      "title": "Watch Cinematic Ad",
+      "category": "Motion",
+      "year": "2026",
+      "order": 8,
+      "video": "/media_uploads/1787129619724-3ec9aa26.mp4",
+      "poster": "assets/kanso.jpg",
+      "description": ""
+    },
+    {
+      "id": "reel-1787129623589",
+      "title": "Smartworld  Elle",
+      "category": "Motion",
+      "year": "2026",
+      "order": 6,
+      "video": "/media_uploads/1787129628611-aafd603e.mp4",
+      "poster": "assets/kanso.jpg",
+      "description": ""
+    }
+  ],
+  "brochures": [
+    {
+      "id": "brochure-1787129640501",
+      "title": "Company Profile External",
+      "category": "PDF Brochure",
+      "year": "2026",
+      "order": 1,
+      "pdf": "/media_uploads/1787129647166-53b60615.pdf",
+      "cover": "",
+      "description": ""
+    },
+    {
+      "id": "brochure-1787129648677",
+      "title": "Event Brochure",
+      "category": "PDF Brochure",
+      "year": "2026",
+      "order": 2,
+      "pdf": "/media_uploads/1787129652711-d90ea08c.pdf",
+      "cover": "",
+      "description": ""
+    },
+    {
+      "id": "brochure-1787129654446",
+      "title": "Newsletter",
+      "category": "PDF Brochure",
+      "year": "2026",
+      "order": 3,
+      "pdf": "/media_uploads/1787129660828-461b4a6c.pdf",
+      "cover": "",
+      "description": ""
+    },
+    {
+      "id": "brochure-1787149094247",
+      "title": "RP Realty Solutions Brochure",
+      "category": "PDF Brochure",
+      "year": "2026",
+      "order": 4,
+      "pdf": "/media_uploads/1787149112185-0d3fb2a2.pdf",
+      "cover": "",
+      "description": ""
+    }
+  ],
+  "logos": [
+    {
+      "id": "novahex",
+      "order": 1,
+      "name": "NOVAHEX",
+      "subtitle": "Digital Systems",
+      "color": "#e91f2a",
+      "mark": "cross",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "skyroute",
+      "order": 2,
+      "name": "SKYROUTE",
+      "subtitle": "Travel Smart",
+      "color": "#2366d1",
+      "mark": "arrow",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "boldarc",
+      "order": 3,
+      "name": "BOLDARC",
+      "subtitle": "Creative Studio",
+      "color": "#0d6075",
+      "mark": "blocks",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "casafuoco",
+      "order": 4,
+      "name": "CASA FUOCO",
+      "subtitle": "Italian Grill",
+      "color": "#f04b23",
+      "mark": "flame",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "poppit",
+      "order": 5,
+      "name": "POPPIT",
+      "subtitle": "Youth Culture",
+      "color": "#8d2fc0",
+      "mark": "flower",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "lumo",
+      "order": 6,
+      "name": "LUMO CLEAN",
+      "subtitle": "Fresh Start",
+      "color": "#22a6a1",
+      "mark": "orbit",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "azura",
+      "order": 7,
+      "name": "AZURA",
+      "subtitle": "Botanicals",
+      "color": "#4d43b8",
+      "mark": "petal",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "atelier",
+      "order": 8,
+      "name": "ATELIER BH",
+      "subtitle": "Craft & Form",
+      "color": "#b38a52",
+      "mark": "monogram",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "northline",
+      "order": 9,
+      "name": "NORTHLINE",
+      "subtitle": "Build Co.",
+      "color": "#151411",
+      "mark": "house",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "rooster",
+      "order": 10,
+      "name": "ROOSTER & CO",
+      "subtitle": "Kitchen",
+      "color": "#d69c14",
+      "mark": "letter",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "verity",
+      "order": 11,
+      "name": "VERITY.AI",
+      "subtitle": "Legal Search",
+      "color": "#e54970",
+      "mark": "search",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "museline",
+      "order": 12,
+      "name": "MUSELINE",
+      "subtitle": "Creative Notes",
+      "color": "#222222",
+      "mark": "wave",
+      "image": "",
+      "watermark": false
+    },
+    {
+      "id": "logo-1787125395662",
+      "name": "VIANAAR",
+      "subtitle": "Real Estate",
+      "color": "#e91f2a",
+      "mark": "letter",
+      "order": 13,
+      "watermark": false,
+      "image": "/media_uploads/1787125407008-c00907d1.png"
+    },
+    {
+      "id": "logo-1787142540371",
+      "name": "Ramshika",
+      "subtitle": "Saree Brand",
+      "color": "#e91f2a",
+      "mark": "letter",
+      "order": 14,
+      "watermark": true,
+      "image": "/media_uploads/1787142548902-6f8e4fe3.png"
+    }
+  ],
+  "services": [
+    {
+      "id": "brand",
+      "title": "Brand Identity",
+      "description": "Logo direction, typography, visual systems and practical brand applications."
+    },
+    {
+      "id": "social",
+      "title": "Social Media Design",
+      "description": "Posts, stories, carousels and scalable campaign systems."
+    },
+    {
+      "id": "packaging",
+      "title": "Packaging & Print",
+      "description": "Packaging, brochures, editorial layouts, posters and production-ready artwork."
+    },
+    {
+      "id": "digital",
+      "title": "Digital Campaigns",
+      "description": "Web graphics, advertising creatives, landing pages and visual content systems."
+    },
+    {
+      "id": "photo",
+      "title": "Photo Manipulation",
+      "description": "Conceptual composites, retouching and campaign image-making."
+    },
+    {
+      "id": "motion",
+      "title": "Video & Motion",
+      "description": "Video editing, graphics, transitions and branded motion content."
+    }
+  ]
+}
