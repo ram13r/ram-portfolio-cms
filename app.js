@@ -487,3 +487,20 @@ async function boot() {
 }
 
 boot();
+// --- Scroll Animations ---
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+// Apply fade-in class to sections and observe them
+setTimeout(() => {
+  document.querySelectorAll('section, .project, .reel-card, .brochure-card, .logo-tile').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+}, 100);
+
