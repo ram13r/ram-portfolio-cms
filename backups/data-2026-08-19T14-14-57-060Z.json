@@ -87,14 +87,14 @@
       "title": "Cover Page",
       "category": "Editorial · Print",
       "year": "2026",
-      "image": "/media_uploads/1787142282247-1c97d73f.jpg",
+      "image": "assets/editorial.jpg",
       "description": "",
       "approach": "",
       "order": 6,
       "featured": false,
       "images": [
-        "/media_uploads/1787142282247-1c97d73f.jpg",
-        "/media_uploads/1787148895653-c5e8ccd9.jpg"
+        "assets/editorial.jpg",
+        "/media_uploads/1787142282247-1c97d73f.jpg"
       ]
     },
     {
