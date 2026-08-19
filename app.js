@@ -3,7 +3,7 @@
  */
 const KEY = 'ramPortfolioCMS_v3';
 const clone = v => JSON.parse(JSON.stringify(v));
-function cleanBase64Data(d){if(!d)return;if(d.projects){d.projects.forEach(p=>{if(p.id==='form-field'&&(!p.image||p.image.startsWith('data:'))){p.image='assets/editorial.jpg';p.images=['assets/editorial.jpg']}if(p.id==='nexa'&&(!p.image||p.image.startsWith('data:'))){p.image='assets/nexa.jpg';p.images=['assets/nexa.jpg']}if(p.image&&p.image.startsWith('data:'))p.image='assets/editorial.jpg';if(p.images)p.images=p.images.map(img=>(img&&img.startsWith('data:'))?'assets/editorial.jpg':img)})}if(d.reels){d.reels.forEach(r=>{if(r.poster&&r.poster.startsWith('data:'))r.poster='assets/kanso.jpg'})}}
+function cleanBase64Data(d){if(!d)return;if(d.projects){d.projects.forEach(p=>{const defaultImg=(p.id==='nexa')?'assets/nexa.jpg':'assets/editorial.jpg';if(p.image&&p.image.startsWith('data:')){p.image=defaultImg}if(p.images){p.images=p.images.map(img=>(img&&img.startsWith('data:'))?defaultImg:img)}})}if(d.reels){d.reels.forEach(r=>{if(r.poster&&r.poster.startsWith('data:'))r.poster='assets/kanso.jpg'})}}
 let data = (() => {
   try {
     const localVal = JSON.parse(localStorage.getItem(KEY)) || clone(window.DEFAULT_PORTFOLIO);
