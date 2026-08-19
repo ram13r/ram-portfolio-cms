@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RAM PRAKASH — Portfolio</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Portfolio of RAM PRAKASH — Senior Graphic Designer with 9+ years of experience in branding, packaging, digital campaigns, video production and visual communication. Available for freelance worldwide.">
+    <meta name="author" content="RAM PRAKASH">
+    <meta name="theme-color" content="#f3eee5">
+    
+    <!-- OG Tags -->
+    <meta property="og:title" content="RAM PRAKASH — Portfolio">
+    <meta property="og:description" content="Portfolio of RAM PRAKASH — Senior Graphic Designer with 9+ years of experience in branding, packaging, digital campaigns, video production and visual communication. Available for freelance worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ramprakash.portfolio.demo"> <!-- Update URL accordingly -->
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAM PRAKASH — Portfolio">
+    <meta name="twitter:description" content="Portfolio of RAM PRAKASH — Senior Graphic Designer with 9+ years of experience in branding, packaging, digital campaigns, video production and visual communication. Available for freelance worldwide.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>RP</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css?v=22">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <header class="nav">
+        <a class="logo" href="#top">RP<span>.</span></a>
+        
+        <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#media">Videos & Brochures</a>
+            <a href="#logos">Logos</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero shell">
+            <div class="hero-type">
+                <p id="heroEyebrow" class="eyebrow"></p>
+                <h1>PORTFOLIO</h1>
+                <div class="script">Graphic Design</div>
+                <p id="heroTagline" class="hero-tagline"></p>
+                <div class="actions">
+                    <a href="#work" class="button solid">View selected work</a>
+                    <a href="#contact" class="button">Work with me</a>
+                </div>
+            </div>
+            
+            <figure class="hero-portrait">
+                <div class="portrait-frame">
+                    <img id="heroImage" alt="RAM PRAKASH" loading="eager">
+                </div>
+                <figcaption>
+                    <strong id="heroName"></strong>
+                    <span id="heroRole"></span>
+                    <small id="heroLocation"></small>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="about shell" id="about">
+            <div>
+                <p class="eyebrow">ABOUT / PROFILE</p>
+                <h2>Hello, I’m<br><span id="aboutName"></span>.</h2>
+            </div>
+            <div class="about-copy">
+                <p id="aboutBio"></p>
+                <a id="resumeLink" class="text-link" href="#">Download resume ↗</a>
+            </div>
+            <div id="stats" class="stats"></div>
+        </section>
+
+        <section class="work" id="work">
+            <div class="shell section-head">
+                <p id="workEyebrow" class="eyebrow">CURATED PORTFOLIO</p>
+                <h2 id="workTitle">SELECTED<br>WORK.</h2>
+            </div>
+            <div id="projectGrid" class="project-grid shell"></div>
+        </section>
+
+        <section class="media shell" id="media">
+            <div class="section-head">
+                <p id="mediaEyebrow" class="eyebrow">VIDEO & DOCUMENTS</p>
+                <h2 id="mediaTitle">VIDEOS &<br>BROCHURES.</h2>
+                <p class="section-note">Vertical reels and cinematic landscape videos play directly in the browser. Use the page controls to browse brochures, or open the full PDF in a new tab.</p>
+            </div>
+            
+            <h3 class="media-subtitle">VIDEOS</h3>
+            <div id="reelGrid" class="reel-grid"></div>
+            
+            <h3 class="media-subtitle">INTERACTIVE BROCHURES</h3>
+            <div id="brochureGrid" class="brochure-grid"></div>
+        </section>
+
+        <section class="logos shell" id="logos">
+            <div class="section-head">
+                <p id="logoEyebrow" class="eyebrow">IDENTITY EXPLORATIONS</p>
+                <h2 id="logoTitle">SELECTED<br>LOGO MARKS.</h2>
+                <p class="section-note">Every existing logo can be renamed, replaced, reordered or removed from the admin panel.</p>
+            </div>
+            <div id="logoGrid" class="logo-grid"></div>
+        </section>
+
+        <section class="services shell" id="services">
+            <div class="section-head">
+                <p id="servicesEyebrow" class="eyebrow">CAPABILITIES</p>
+                <h2 id="servicesTitle">WHAT I DO.</h2>
+            </div>
+            <div id="serviceList" class="service-list"></div>
+        </section>
+
+        <section class="contact shell" id="contact">
+            <p id="contactEyebrow" class="eyebrow">START A PROJECT</p>
+            <h2 id="contactTitle">HAVE A PROJECT<br>IN <em>MIND?</em></h2>
+            <p id="contactSubtitle">Let’s turn your idea into something people remember.</p>
+            <div id="contactLinks" class="contact-links"></div>
+        </section>
+    </main>
+
+    <footer>
+        <strong>RAM PRAKASH — GRAPHIC DESIGNER</strong>
+        <span id="footerText">Available for freelance and remote collaborations.</span>
+        <span>© <span id="footerYear"></span></span>
+    </footer>
+
+    <dialog id="projectModal">
+        <button class="modal-close" aria-label="Close">×</button>
+        <img id="modalImage" alt="" loading="lazy">
+        <div class="modal-copy">
+            <p id="modalMeta" class="eyebrow"></p>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            <h3>DESIGN APPROACH</h3>
+            <p id="modalApproach"></p>
+        </div>
+    </dialog>
+
+    <script src="assets/pdf.min.js?v=22"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc='assets/pdf.worker.min.js';</script>
+    <script src="default-data.js?v=22"></script>
+    <script src="media-db.js?v=22"></script>
+    <script src="app.js?v=22"></script>
+</body>
+</html>
