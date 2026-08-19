@@ -79,6 +79,17 @@
       ]
     },
     {
+      "id": "surreal",
+      "order": 5,
+      "title": "SURREAL COMPOSITES",
+      "category": "Photo Manipulation",
+      "year": "2026",
+      "image": "assets/manipulation.jpg",
+      "featured": false,
+      "description": "A collection of cinematic advertising composites built around impossible spaces and controlled atmosphere.",
+      "approach": "Lighting, scale, masking and color grading connect unrelated source elements into believable visual worlds."
+    },
+    {
       "id": "form-field",
       "title": "Cover Page",
       "category": "Editorial · Print",
