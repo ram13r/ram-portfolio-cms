@@ -344,12 +344,24 @@ async function loadSingleBrochure(item) {
 /**
  * MODAL HANDLING
  */
+function getProjectImages(p) {
+  if (!p) return [];
+  if (Array.isArray(p.images) && p.images.length > 0) return p.images;
+  if (p.image) return [p.image];
+  return [];
+}
+
 function openProject(id) {
   const p = data.projects.find(x => x.id === id);
   if (!p) return;
   
-  const modalImage = $('#modalImage');
-  if (modalImage) modalImage.src = p.image;
+  const modalGallery = $('#modalGallery');
+  if (modalGallery) {
+    const imgs = getProjectImages(p);
+    modalGallery.innerHTML = imgs.map((src, i) => `
+      <img src="${src}" alt="${p.title} image ${i+1}" loading="lazy">
+    `).join('');
+  }
   
   setText('#modalMeta', `${p.category} / ${p.year}`);
   setText('#modalTitle', p.title);
