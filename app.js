@@ -82,10 +82,17 @@ async function render() {
   const projectGrid = $('#projectGrid');
   if (projectGrid) {
     const projects = [...data.projects].sort((a, b) => a.order - b.order);
-    projectGrid.innerHTML = projects.map(proj => {
-      const imgs = getProjectImages(proj);
-      return `
+    projectGrid.innerHTML = projects.map(proj => `
       <article class="project" data-id="${proj.id}">
+        <figure>
+          <a class="project-image" href="${proj.image}" target="_blank" rel="noopener" title="Open cover image in new tab">
+            <img src="${proj.image}" alt="${proj.title} project" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'300\\' style=\\'background:%23eee\\'/%3E'; this.alt='Image not available'">
+          </a>
+        </figure>
+        <div class="image-hint">
+          <span>Click image for full view ↗</span>
+          <button class="case-link" data-id="${proj.id}">View case study</button>
+        </div>
         <div class="project-meta">
           <div>
             <p>${proj.category}</p>
@@ -93,16 +100,15 @@ async function render() {
           </div>
           <span>${proj.year}</span>
         </div>
-        <div class="project-images">
-          ${imgs.map((src, i) => `
-            <a href="${src}" target="_blank" rel="noopener" class="project-img-link" title="Click to open full image in new tab">
-              <img src="${src}" alt="${proj.title} image ${i+1}" loading="lazy">
-            </a>
-          `).join('')}
-        </div>
       </article>
-    `;
-    }).join('');
+    `).join('');
+
+    document.querySelectorAll('.case-link').forEach(el => {
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+        openProject(el.dataset.id);
+      });
+    });
   }
 
   // --- Reels / Media ---
@@ -337,13 +343,52 @@ async function loadSingleBrochure(item) {
 }
 
 /**
- * HELPERS
+ * MODAL HANDLING
  */
 function getProjectImages(p) {
   if (!p) return [];
   if (Array.isArray(p.images) && p.images.length > 0) return p.images;
   if (p.image) return [p.image];
   return [];
+}
+
+function openProject(id) {
+  const p = data.projects.find(x => x.id === id);
+  if (!p) return;
+  
+  const modalGallery = $('#modalGallery');
+  if (modalGallery) {
+    const imgs = getProjectImages(p);
+    modalGallery.innerHTML = imgs.map((src, i) => `
+      <a href="${src}" target="_blank" rel="noopener" class="modal-img-link" title="Click to open full image in new tab ↗">
+        <img src="${src}" alt="${p.title} image ${i+1}" loading="lazy">
+        <span class="img-open-hint">Open full image in new tab ↗</span>
+      </a>
+    `).join('');
+  }
+  
+  setText('#modalMeta', `${p.category} / ${p.year}`);
+  setText('#modalTitle', p.title);
+  setText('#modalDesc', p.description);
+  setText('#modalApproach', p.approach);
+  
+  const modal = $('#projectModal');
+  if (modal) modal.showModal();
+}
+
+const modalClose = $('.modal-close');
+if (modalClose) {
+  modalClose.addEventListener('click', () => {
+    const modal = $('#projectModal');
+    if (modal) modal.close();
+  });
+}
+
+const projectModal = $('#projectModal');
+if (projectModal) {
+  projectModal.addEventListener('click', e => {
+    if (e.target === projectModal) projectModal.close();
+  });
 }
 
 /**
